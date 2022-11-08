@@ -5,7 +5,8 @@
       "Sid": "DenyLeaveOrg",
       "Effect": "Deny",
       "Action": [
-        "organizations:LeaveOrganization"
+        "organizations:LeaveOrganization",
+        "organizations:RemoveAccountFromOrganization"
       ],
       "Resource": [
         "*"

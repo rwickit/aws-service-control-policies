@@ -5,7 +5,9 @@
       "Sid": "DenyIamUserCreate",
       "Effect": "Deny",
       "Action": [
-        "iam:CreateUser"
+        "iam:CreateUser",
+        "iam:DeleteSAMLProvider",
+        "iam:CreateSAMLProvider"
       ],
       "Resource": "*"
     }

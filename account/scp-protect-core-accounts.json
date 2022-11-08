@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenySsoOnProtectedAccounts",
+      "Effect": "Deny",
+      "Action": [
+        "sso:*"
+      ],
+      "Resource": [
+        "arn:aws:sso:::account/<<accountid>>",
+        "arn:aws:sso:::account/<<accountid>>",
+        "arn:aws:sso:::account/<<accountid>>"
+      ]
+    }
+  ]
+}

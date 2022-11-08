@@ -1,0 +1,27 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ProtectStagedResources",
+      "Effect": "Deny",
+      "Action": "*",
+      "Resource": [
+        "arn:aws:*:*:*:*<<resource-name-pattern-1>>*",
+        "arn:aws:*:*:*:*<<resource-name-pattern-2>>*",
+        "arn:aws:*:*:*:*<<resource-name-pattern-3>>*",
+        "arn:aws:*::*:*<<resource-name-pattern-1>>*",
+        "arn:aws:*::*:*<<resource-name-pattern-2>>*",
+        "arn:aws:*::*:*<<resource-name-pattern-3>>*"
+      ],
+      "Condition": {
+        "ForAllValues:ArnNotEquals": {
+          "aws:PrincipalARN": [
+            "arn:aws:iam::*:role/<<IAM_ROLE_NAME1>>",
+            "arn:aws:iam::*:role/<<IAM_ROLE_NAME-2>>",
+            "arn:aws:iam::*:role/*some-other-role-pattern*"
+          ]
+        }
+      }
+    }
+  ]
+}

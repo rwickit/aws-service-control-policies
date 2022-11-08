@@ -1,0 +1,16 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyBucketAccess",
+      "Effect": "Deny",
+      "Action": [
+        "s3:*"
+      ],
+      "Resource": [
+        "arn:${AWS::Partition}:s3:::*<<Some-Bucket-Pattern*",
+        "arn:${AWS::Partition}:s3:::<<specfic-bucket-name>>"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyBillingAccess",
+      "Effect": "Deny",
+      "Action": [
+        "ce:*",
+        "aws-portal:*",
+        "cur:*"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAllValues:ArnNotEquals": {
+          "aws:PrincipalARN": [
+            "arn:aws:iam::*:role/<<IAM_ROLE_NAME1>>",
+            "arn:aws:iam::*:role/<<IAM_ROLE_NAME-2>>",
+            "arn:aws:iam::*:role/*some-other-role-pattern*"
+          ]
+        }
+      }
+    }
+  ]
+}
